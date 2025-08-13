@@ -27,13 +27,16 @@ $stmt=$pdo->prepare($sql);
 $stmt->execute([$usr,$usr,$hashed_pass]);
 $row=$stmt->fetch(PDO::FETCH_ASSOC);
 if(!$row){
- echo "Los datos ingresados no son validos !";}
+ echo "Los datos ingresados no son validos !";
+}
  else
 {
-// Ingresa
-
-echo "Bienvenido!";
-
+    session_start();
+    date_default_timezone_set('America/Argentina/Buenos_Aires');
+    $_SESSION['time'] = date('H:i:s');
+    $_SESSION['username'] = $usr;
+    $_SESSION['logueado']=true;
+    header("location:welcome.php");
 }
     ?>
 </body>
