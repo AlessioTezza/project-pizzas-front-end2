@@ -20,7 +20,7 @@ try {
 $usr = $_POST['username'];
 $pass = $_POST['password'];
 $hashed_pass = hash('sha256', $pass);
-$sql="select * from users where (username=? or email=?) and password=?";
+$sql="select * from users where (username=? or email=?) and password=? and active='SI'";
 // Use de sentencias prepared
 // uso de POO- Programacion orientada a objetos
 $stmt=$pdo->prepare($sql);
