@@ -8,7 +8,9 @@
 </head>
 <body>
     <?php
+    session_start();
 include_once ("config_login.php"); // ver usar require()
+ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 try {
     $pdo = new PDO("mysql:host=" . SERVER_NAME . ";dbname=" . DATABASE_NAME, USER_NAME, PASSWORD);
     // set the PDO error mode to exception
@@ -37,6 +39,8 @@ if(!$row){
     $_SESSION['username'] = $usr;
     $_SESSION['logueado']=true;
     header("location:welcome.php");
+}
+
 }
     ?>
 </body>
