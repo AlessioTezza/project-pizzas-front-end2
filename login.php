@@ -15,7 +15,7 @@
   session_start();
   if ($_SESSION['logueado'] = true) {
     include_once("config_login.php"); // ver usar require()
-    include_once("resources/db.class.php");
+    include_once("db.class.php");
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $link = new Db();
       $usr = $_POST['username'];
