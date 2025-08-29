@@ -25,8 +25,16 @@
       $stmt = $link->run($sql, [$usr, $usr, $hashed_pass]);
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       if (!$row) {
-        echo "Los datos ingresados no son validos !";
-      } else {
+      ?> 
+       <div class="alert alert-danger">
+          <a href="login.html" class="close" data-dismiss="alert">×</a>
+          <div class="text-center">
+            <h5><strong>¡Error!</strong> Login Invalido.</h5>
+          </div>
+        </div>
+      <?php
+      } 
+      else {
         session_start();
         date_default_timezone_set('America/Argentina/Buenos_Aires');
         $_SESSION['time'] = date('H:i:s');
