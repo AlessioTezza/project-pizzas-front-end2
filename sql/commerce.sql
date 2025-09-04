@@ -120,3 +120,12 @@ COMMIT;
 # Listado de productos con sus correspondientes categorias.
 select products.image,products.price,product.name,products.start_date,categories.category_name from products inner join categories on products.id_category=categories.id_category
 insert into products(product_name,price,image,id_category) values ('Carne/Pollo/Jamón y Queso',2500,'img/empanada.jpg',3);
+select count(*) from products
+select count(*) as cantidad from products
+select count(*) as cantidad from products where id_category=1
+/* cambia el nombre del producto*/
+update products set product_name='promo primavera' where id_product=6
+/*aumenta el precio a todos los productos*/;
+update products set price=price+(price*0.02)
+/* modificata el precio de un solo producto*/
+update products set price=price+(price*0.01) where id_product=9
