@@ -23,7 +23,7 @@ include_once("config_product.php");
 include_once("db.class.php");
 $link = new Db();
 include_once("upload.class.php");
-$upload = new Upload();
+$upload = new Upload();c:\xampp\htdocs\project_mvt
 // Ruta completa de la imagen subida al servidor.
 $path_img= $upload->uploadImage();
 $sql = "INSERT INTO products (id_category, price, product_name, image) values (?,?,?,?)";
